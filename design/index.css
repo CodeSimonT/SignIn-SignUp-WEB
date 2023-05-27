@@ -1,0 +1,53 @@
+:root {
+  --color: #5d6d79;
+  --blue: #6c63ff;
+}
+/* hide the button of input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.containerH {
+  height: 100vh;
+}
+.leftW {
+  width: 40%;
+}
+.rightW {
+  width: 60%;
+}
+.imgW {
+  width: 50%;
+}
+.buttonStyle {
+  background-color: var(--blue);
+}
+.iconS {
+  width: 25px;
+}
+.validationDesign {
+  color: red;
+}
+
+@media screen and (max-width: 992px) {
+  .imgW {
+    width: 300px;
+  }
+  .leftW {
+    width: 100%;
+  }
+  .rightW {
+    width: 100%;
+  }
+}
