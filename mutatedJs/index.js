@@ -6,6 +6,8 @@ let validationContainer = {
   firstNameValidation: false,
   middleNameValidation: false,
   emailInputValidation: false,
+  // for password
+  passwordValisation: false,
   phoneInputValidation: false,
   addressInputValidation: false,
   BarangayInValidation: false,
@@ -20,6 +22,7 @@ button.addEventListener("click", () => {
   firstname();
   middlename();
   emailValidate();
+  passwordValidate();
   phoneNumber();
   addressValidate();
   barangayValidation();
@@ -103,6 +106,65 @@ function emailValidate() {
     input.nextElementSibling.innerText = "Email";
     input.nextElementSibling.classList.remove("validationDesign");
     validationContainer.emailInputValidation = true;
+  }
+}
+
+// password validation
+function passwordValidate() {
+  let inputpass = document.querySelector("#passwordvalidate");
+  let inputcon = document.querySelector("#confirmPassValidate");
+
+  if (inputpass.value === "" && inputcon.value === "") {
+    // pass
+    inputpass.classList.add("is-invalid");
+    inputpass.nextElementSibling.innerText = "Input Password";
+    inputpass.nextElementSibling.classList.add("validationDesign");
+    // con
+    inputcon.classList.add("is-invalid");
+    inputcon.nextElementSibling.innerText = "Input Password";
+    inputcon.nextElementSibling.classList.add("validationDesign");
+  } else if (inputpass.value === "") {
+    // pass
+    inputpass.classList.add("is-invalid");
+    inputpass.nextElementSibling.innerText = "Input Password";
+    inputpass.nextElementSibling.classList.add("validationDesign");
+  } else if (inputcon.value === "") {
+    // con
+    inputcon.classList.add("is-invalid");
+    inputcon.nextElementSibling.innerText = "Input Password";
+    inputcon.nextElementSibling.classList.add("validationDesign");
+  } else if (inputpass.value !== inputcon.value) {
+    // pass
+    inputpass.classList.add("is-invalid");
+    inputpass.nextElementSibling.innerText = "Password incorrect";
+    inputpass.nextElementSibling.classList.add("validationDesign");
+    // con
+    inputcon.classList.add("is-invalid");
+    inputcon.nextElementSibling.innerText = "Password incorrect";
+    inputcon.nextElementSibling.classList.add("validationDesign");
+  } else {
+    // pass
+    inputpass.classList.remove("is-invalid");
+    inputpass.nextElementSibling.innerText = "Password";
+    inputpass.nextElementSibling.classList.remove("validationDesign");
+    // con
+    inputcon.classList.remove("is-invalid");
+    inputcon.nextElementSibling.innerText = "Confirm Password";
+    inputcon.nextElementSibling.classList.remove("validationDesign");
+    validationContainer.passwordValisation = true;
+  }
+}
+
+// password hide and show function
+function hideshow1() {
+  let x = document.getElementById("passwordvalidate");
+  let b = document.getElementById("confirmPassValidate");
+  if (x.type === "password" && b.type === "password") {
+    x.type = "text";
+    b.type = "text";
+  } else {
+    x.type = "password";
+    b.type = "password";
   }
 }
 
