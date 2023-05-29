@@ -79,9 +79,6 @@ function middlename() {
     input.classList.add("is-invalid");
     input.nextElementSibling.innerText = "Need input";
     input.nextElementSibling.classList.add("validationDesign");
-  } else if (input.value.length < 8) {
-    input.classList.add("is-invalid");
-    input.nextElementSibling.innerText = "Min. char 8";
   } else {
     input.nextElementSibling.innerText = "Middle Name";
     input.classList.remove("is-invalid");
